@@ -71,7 +71,14 @@
           "@id": "https://the-political-compass-app.netlify.app/#org",
           "name": "The Political Compass",
           "url": "https://the-political-compass-app.netlify.app/",
-          "logo": "https://the-political-compass-app.netlify.app/favicon.svg",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://the-political-compass-app.netlify.app/favicon-512.png",
+            "contentUrl": "https://the-political-compass-app.netlify.app/favicon-512.png",
+            "width": 512,
+            "height": 512,
+            "caption": "The Political Compass logo"
+          },
           "founder": {
             "@type": "Person",
             "name": "McKale Olson",
@@ -86,13 +93,53 @@
           "description": "Interactive reference for 132 abstract political ideologies across three compasses.",
           "isPartOf": { "@id": "https://the-political-compass-app.netlify.app/#website" },
           "inLanguage": "en-US",
-          "primaryImageOfPage": "https://the-political-compass-app.netlify.app/og-image.svg",
+          "primaryImageOfPage": { "@id": "https://the-political-compass-app.netlify.app/#primaryimage" },
+          "breadcrumb": { "@id": "https://the-political-compass-app.netlify.app/#breadcrumb" },
+          "datePublished": "2026-04-26",
+          "dateModified": "2026-04-26",
           "about": [
             { "@id": "https://the-political-compass-app.netlify.app/#auth-left" },
             { "@id": "https://the-political-compass-app.netlify.app/#auth-right" },
             { "@id": "https://the-political-compass-app.netlify.app/#lib-left" },
             { "@id": "https://the-political-compass-app.netlify.app/#lib-right" }
           ]
+        },
+        {
+          "@type": "ImageObject",
+          "@id": "https://the-political-compass-app.netlify.app/#primaryimage",
+          "url": "https://the-political-compass-app.netlify.app/og-image.png",
+          "contentUrl": "https://the-political-compass-app.netlify.app/og-image.png",
+          "width": 1200,
+          "height": 630,
+          "caption": "The Political Compass — 132 ideologies across three compasses"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://the-political-compass-app.netlify.app/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://the-political-compass-app.netlify.app/"
+            }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://the-political-compass-app.netlify.app/#article",
+          "isPartOf": { "@id": "https://the-political-compass-app.netlify.app/#webpage" },
+          "mainEntityOfPage": { "@id": "https://the-political-compass-app.netlify.app/#webpage" },
+          "headline": "The Political Compass — 132 Political Ideologies Across Three Axes",
+          "description": "An interactive reference plotting 132 abstract political ideologies across three orthogonal two-axis compasses: the classic Authoritarian/Libertarian × Left/Right; Platform Logic (Centralized/Distributed × Extractive/Generative); and User Logic (Augmented/Organic × Sovereign/Networked).",
+          "image": { "@id": "https://the-political-compass-app.netlify.app/#primaryimage" },
+          "datePublished": "2026-04-26",
+          "dateModified": "2026-04-26",
+          "author": { "@id": "https://the-political-compass-app.netlify.app/#org" },
+          "publisher": { "@id": "https://the-political-compass-app.netlify.app/#org" },
+          "articleSection": "Political Philosophy",
+          "keywords": "political compass, political ideologies, authoritarianism, libertarianism, left wing, right wing, anarchism, capitalism, socialism, fascism, conservatism, liberalism",
+          "inLanguage": "en-US"
         },
         {
           "@type": "DefinedTermSet",
