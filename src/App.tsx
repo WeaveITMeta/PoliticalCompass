@@ -615,6 +615,9 @@ const PrivacyPolicy = () => (
         <span className="block w-8 h-1 bg-white border border-slate-200" />
         <span className="block w-8 h-1 bg-[#3C3B6E]" />
       </div>
+      <p className="text-center text-slate-400 text-xs">
+        Built By: <a href="https://mckaleolson.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#B22234] underline transition-colors">McKaleOlson.com</a>
+      </p>
     </div>
   </div>
 );
@@ -728,6 +731,8 @@ export default function App() {
             The Political Compass &copy; 2026. Built with React & Framer Motion.
           </p>
           <p className="text-slate-400 text-xs mt-2">
+            Built By: <a href="https://mckaleolson.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#B22234] underline transition-colors">McKaleOlson.com</a>
+            <span className="mx-2">·</span>
             <a href="/privacy" className="hover:text-[#3C3B6E] underline transition-colors">Privacy Policy</a>
           </p>
         </footer>
