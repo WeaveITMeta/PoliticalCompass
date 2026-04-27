@@ -5,7 +5,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Info, Users, Cpu, Zap, Compass as CompassIcon } from 'lucide-react';
+import { Info, Users, Cpu, Zap, Compass as CompassIcon, BookOpen, ArrowRight } from 'lucide-react';
 
 interface CompassData {
   title: string;
@@ -462,6 +462,66 @@ const Compass = ({ data, activeNode, setActiveNode }: {
   );
 };
 
+// TODO: replace with your real Amazon Associates tag (Amazon will reject unattributed links)
+const AMAZON_AFFILIATE_TAG = 'polcompass-20';
+
+const READING_LIST: { title: string; author: string; quadrant: string; blurb: string; search: string }[] = [
+  { title: "The Communist Manifesto", author: "Marx & Engels", quadrant: "Auth-Left", blurb: "Founding text of class-struggle politics. History reframed as the conflict of economic classes." },
+  { title: "The State and Revolution", author: "V.I. Lenin", quadrant: "Auth-Left", blurb: "The Bolshevik blueprint for a vanguard-led seizure of state power on behalf of the workers." },
+  { title: "Reflections on the Revolution in France", author: "Edmund Burke", quadrant: "Auth-Right", blurb: "The intellectual foundation of modern conservatism. Tradition, prudence, and continuity over abstraction." },
+  { title: "Leviathan", author: "Thomas Hobbes", quadrant: "Auth-Right", blurb: "The social-contract case for an absolute sovereign as the only escape from the state of nature." },
+  { title: "The Conquest of Bread", author: "Peter Kropotkin", quadrant: "Lib-Left", blurb: "Classical anarcho-communism: a stateless society of voluntary cooperation and free distribution." },
+  { title: "The Dispossessed", author: "Ursula K. Le Guin", quadrant: "Lib-Left", blurb: "Anarchist utopia in fiction — what a libertarian-socialist world might actually feel like to live in." },
+  { title: "The Wealth of Nations", author: "Adam Smith", quadrant: "Lib-Right", blurb: "The classical case for markets, division of labor, and the invisible hand of self-interested exchange." },
+  { title: "Anarchy, State, and Utopia", author: "Robert Nozick", quadrant: "Lib-Right", blurb: "The libertarian counterargument to Rawls; the moral case for a minimal night-watchman state." },
+].map(b => ({ ...b, search: `${b.title} ${b.author}` }));
+
+const amazonURL = (search: string) =>
+  `https://www.amazon.com/s?${new URLSearchParams({ k: search, tag: AMAZON_AFFILIATE_TAG }).toString()}`;
+
+const ReadingList = () => (
+  <section className="border-t border-slate-200 pt-16 pb-4">
+    <div className="text-center mb-10">
+      <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3 flex items-center justify-center gap-2">
+        <BookOpen className="w-6 h-6 text-[#3C3B6E]" />
+        Foundational Reading
+      </h2>
+      <p className="text-sm md:text-base text-slate-500 max-w-2xl mx-auto">
+        Two canonical texts for each corner of the compass. Read the original arguments rather than the caricatures.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+      {READING_LIST.map(book => {
+        const accent = book.quadrant.endsWith('Left') === (book.quadrant.startsWith('Auth')) ? '#B22234' : '#3C3B6E';
+        return (
+          <a
+            key={book.title}
+            href={amazonURL(book.search)}
+            target="_blank"
+            rel="nofollow sponsored noopener noreferrer"
+            className="group flex flex-col bg-white border border-slate-200 hover:border-slate-400 rounded-xl p-5 transition-all hover:shadow-md"
+          >
+            <span className="text-[10px] uppercase tracking-wider font-bold mb-2" style={{ color: accent }}>
+              {book.quadrant}
+            </span>
+            <h3 className="text-base font-bold text-slate-900 mb-1 leading-tight">{book.title}</h3>
+            <p className="text-xs text-slate-500 mb-3">{book.author}</p>
+            <p className="text-sm text-slate-700 leading-relaxed mb-4 flex-1">{book.blurb}</p>
+            <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#3C3B6E] group-hover:text-[#B22234] transition-colors">
+              View on Amazon <ArrowRight className="w-3 h-3" />
+            </span>
+          </a>
+        );
+      })}
+    </div>
+
+    <p className="text-xs text-slate-400 text-center mt-8 max-w-2xl mx-auto italic">
+      As an Amazon Associate, we earn from qualifying purchases. Links above use our affiliate ID.
+    </p>
+  </section>
+);
+
 export default function App() {
   const [activeNode, setActiveNode] = useState<any>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
@@ -553,6 +613,9 @@ export default function App() {
             <Compass data={USER_LOGIC} activeNode={activeNode} setActiveNode={setActiveNode} />
           </motion.div>
         </div>
+
+        {/* Foundational reading — Amazon affiliate */}
+        <ReadingList />
 
         {/* Footer */}
         <footer className="text-center py-12 border-t border-slate-200">
