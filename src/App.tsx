@@ -521,9 +521,108 @@ const ReadingList = () => (
   </section>
 );
 
+const PrivacyPolicy = () => (
+  <div className="min-h-screen bg-white font-sans text-slate-900">
+    <div className="h-1 w-full flex">
+      <div className="flex-1 bg-[#B22234]" />
+      <div className="flex-1 bg-white" />
+      <div className="flex-1 bg-[#3C3B6E]" />
+    </div>
+
+    <div className="max-w-3xl mx-auto px-6 py-12 md:py-20">
+      <a href="/" className="inline-flex items-center gap-1 text-sm font-semibold text-[#3C3B6E] hover:text-[#B22234] transition-colors mb-8">
+        ← Back to The Political Compass
+      </a>
+
+      <h1 className="text-4xl md:text-5xl font-bold text-[#B22234] mb-3">Privacy Policy</h1>
+      <p className="text-sm text-slate-500 mb-10">Last updated: April 26, 2026</p>
+
+      <div className="prose prose-slate max-w-none space-y-6 text-slate-700 leading-relaxed">
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Overview</h2>
+          <p>
+            The Political Compass (&quot;we&quot;, &quot;us&quot;) operates this website at <strong>the-political-compass-app.netlify.app</strong>.
+            This page explains what data is collected, how it is used, and your choices regarding it.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">What We Collect</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>No accounts, no submissions.</strong> This site does not require sign-up, login, or any user-submitted information. We do not track individual visitor identity.</li>
+            <li><strong>Hosting logs.</strong> Our host, Netlify, maintains standard server access logs for security and operations: IP address, user agent, timestamp, and requested URL. These are retained according to <a href="https://www.netlify.com/privacy/" className="text-[#3C3B6E] underline" target="_blank" rel="noopener noreferrer">Netlify&apos;s privacy policy</a>.</li>
+            <li><strong>Web fonts.</strong> Pages load Inter and JetBrains Mono from Google Fonts, which involves a request to <code>fonts.googleapis.com</code> and may be logged by Google per its own policy.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Cookies</h2>
+          <p>This site does not set first-party cookies for tracking, advertising, or analytics.</p>
+          <p>
+            When you click an Amazon link in our Foundational Reading section, Amazon may set cookies on your device to attribute any subsequent purchase to our affiliate account.
+            Those cookies are governed by <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ" className="text-[#3C3B6E] underline" target="_blank" rel="noopener noreferrer">Amazon&apos;s privacy notice</a>, not ours.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Affiliate Disclosure (Amazon Associates)</h2>
+          <p>
+            The Political Compass is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.
+            As an Amazon Associate, we earn from qualifying purchases.
+          </p>
+          <p>
+            Affiliate links are marked <code>rel=&quot;sponsored&quot;</code> and carry our affiliate tag (<code>tag=olsonamazon-20</code>) in the URL.
+            We do <strong>not</strong> receive any personal information about purchases you make on Amazon — only aggregated commission reports.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Third Parties</h2>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>Amazon.com</strong> — purchases routed through affiliate links</li>
+            <li><strong>Google Fonts</strong> — web font delivery</li>
+            <li><strong>Netlify</strong> — hosting, CDN, and DNS</li>
+          </ul>
+          <p>Each operates under its own privacy policy. We do not share any data with them beyond what is technically necessary to load and serve the site.</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Children</h2>
+          <p>This site is not directed at children under 13 and does not knowingly collect any data from them.</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Your Rights</h2>
+          <p>
+            Because we do not collect personal information, there is generally nothing for us to delete, export, or correct on your behalf.
+            If you have a concern about something on this site, please contact us.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Changes</h2>
+          <p>This policy may be updated as the site evolves. The &quot;Last updated&quot; date at the top of the page reflects the most recent revision.</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">Contact</h2>
+          <p>For privacy questions, email: <a href="mailto:weaveitmeta@gmail.com" className="text-[#3C3B6E] underline">weaveitmeta@gmail.com</a></p>
+        </section>
+      </div>
+
+      <div className="flex justify-center gap-1 mt-16 mb-4">
+        <span className="block w-8 h-1 bg-[#B22234]" />
+        <span className="block w-8 h-1 bg-white border border-slate-200" />
+        <span className="block w-8 h-1 bg-[#3C3B6E]" />
+      </div>
+    </div>
+  </div>
+);
+
 export default function App() {
   const [activeNode, setActiveNode] = useState<any>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const isPrivacy = typeof window !== 'undefined' && window.location.pathname === '/privacy';
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -534,6 +633,8 @@ export default function App() {
     window.addEventListener('mousedown', handleClickOutside);
     return () => window.removeEventListener('mousedown', handleClickOutside);
   }, [activeNode]);
+
+  if (isPrivacy) return <PrivacyPolicy />;
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-[#B22234]/15 selection:text-[#3C3B6E]">
@@ -625,6 +726,9 @@ export default function App() {
           </div>
           <p className="text-slate-400 text-sm">
             The Political Compass &copy; 2026. Built with React & Framer Motion.
+          </p>
+          <p className="text-slate-400 text-xs mt-2">
+            <a href="/privacy" className="hover:text-[#3C3B6E] underline transition-colors">Privacy Policy</a>
           </p>
         </footer>
       </div>
