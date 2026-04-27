@@ -10,3 +10,6 @@ coverage/
 # local dev notes
 TODO.txt
 .netlify/
+
+# Google Search Console verification (deployed via Netlify, not tracked publicly)
+public/google*.html
