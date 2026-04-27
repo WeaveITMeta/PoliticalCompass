@@ -462,8 +462,7 @@ const Compass = ({ data, activeNode, setActiveNode }: {
   );
 };
 
-// TODO: replace with your real Amazon Associates tag (Amazon will reject unattributed links)
-const AMAZON_AFFILIATE_TAG = 'polcompass-20';
+const AMAZON_AFFILIATE_TAG = 'olsonamazon-20';
 
 const READING_LIST: { title: string; author: string; quadrant: string; blurb: string; search: string }[] = [
   { title: "The Communist Manifesto", author: "Marx & Engels", quadrant: "Auth-Left", blurb: "Founding text of class-struggle politics. History reframed as the conflict of economic classes." },
