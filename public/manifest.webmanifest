@@ -1,0 +1,17 @@
+{
+  "name": "The Political Compass",
+  "short_name": "Political Compass",
+  "description": "Interactive reference for 132 political ideologies across three orthogonal compasses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#B22234",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

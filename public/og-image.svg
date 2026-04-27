@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+
+  <rect x="0" y="0" width="400" height="8" fill="#B22234"/>
+  <rect x="400" y="0" width="400" height="8" fill="#ffffff"/>
+  <rect x="800" y="0" width="400" height="8" fill="#3C3B6E"/>
+
+  <g transform="translate(880,200)">
+    <rect x="0" y="0" width="120" height="120" fill="#FBE9EC" stroke="#cbd5e1"/>
+    <rect x="120" y="0" width="120" height="120" fill="#E8EFF9" stroke="#cbd5e1"/>
+    <rect x="0" y="120" width="120" height="120" fill="#E8EFF9" stroke="#cbd5e1"/>
+    <rect x="120" y="120" width="120" height="120" fill="#FBE9EC" stroke="#cbd5e1"/>
+    <line x1="120" y1="0" x2="120" y2="240" stroke="#94a3b8" stroke-dasharray="3 3"/>
+    <line x1="0" y1="120" x2="240" y2="120" stroke="#94a3b8" stroke-dasharray="3 3"/>
+  </g>
+
+  <text x="100" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="92" font-weight="800" fill="#B22234">The Political</text>
+  <text x="100" y="320" font-family="system-ui, -apple-system, sans-serif" font-size="92" font-weight="800" fill="#B22234">Compass</text>
+
+  <text x="100" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="600" fill="#3C3B6E">132 ideologies across three compasses</text>
+  <text x="100" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#64748b">Classic two-axis  ·  Platform Logic  ·  User Logic</text>
+
+  <text x="100" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#94a3b8">the-political-compass-app.netlify.app</text>
+
+  <rect x="0" y="622" width="400" height="8" fill="#B22234"/>
+  <rect x="400" y="622" width="400" height="8" fill="#ffffff"/>
+  <rect x="800" y="622" width="400" height="8" fill="#3C3B6E"/>
+</svg>

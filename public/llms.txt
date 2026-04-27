@@ -1,0 +1,16 @@
+# The Political Compass
+
+> An interactive reference for political-compass classification, covering 132 abstract political ideologies across three orthogonal compasses: the classic two-axis (Authoritarian/Libertarian × Left/Right, 100 ideologies), Platform Logic (Centralized/Distributed × Extractive/Generative, 16 ideologies), and User Logic (Augmented/Organic × Sovereign/Networked, 16 ideologies). Click any cell on the site to see its definition.
+
+## Site
+
+- [Homepage](https://the-political-compass-app.netlify.app/) — three interactive compasses with click-to-define on every ideology
+- [Privacy Policy](https://the-political-compass-app.netlify.app/privacy) — data handling and Amazon Associates affiliate disclosure
+
+## API
+
+- [Natural-language search: GET /ask?q={query}](https://the-political-compass-app.netlify.app/ask) — returns Schema.org JSON-LD ItemList of DefinedTerm. Searches across all 132 ideologies. Example: `/ask?q=anarchism`
+
+## Source
+
+- [GitHub repository](https://github.com/WeaveITMeta/PoliticalCompass) — React + Vite + Tailwind, deployed on Netlify

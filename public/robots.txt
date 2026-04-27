@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /.netlify/
+
+Sitemap: https://the-political-compass-app.netlify.app/sitemap.xml

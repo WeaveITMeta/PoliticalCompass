@@ -3,11 +3,121 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Political Compass</title>
+
+    <title>The Political Compass — 132 Political Ideologies Across Three Axes</title>
+    <meta name="description" content="Interactive reference for 132 abstract political ideologies. Classic Authoritarian/Libertarian × Left/Right, plus two new compasses: Platform Logic and User Logic. Click any ideology for a one-line definition." />
+    <meta name="author" content="McKale Olson" />
+    <meta name="theme-color" content="#B22234" />
+    <meta name="color-scheme" content="light" />
+
+    <link rel="canonical" href="https://the-political-compass-app.netlify.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Political Compass" />
+    <meta property="og:url" content="https://the-political-compass-app.netlify.app/" />
+    <meta property="og:title" content="The Political Compass — 132 Political Ideologies Across Three Axes" />
+    <meta property="og:description" content="Interactive reference for 132 abstract political ideologies. Classic two-axis plus Platform Logic and User Logic. Click any cell for its definition." />
+    <meta property="og:image" content="https://the-political-compass-app.netlify.app/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Political Compass — 132 Political Ideologies" />
+    <meta name="twitter:description" content="Interactive reference for 132 abstract political ideologies. Click any cell for a definition." />
+    <meta name="twitter:image" content="https://the-political-compass-app.netlify.app/og-image.svg" />
+
+    <!-- Preconnect to font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://the-political-compass-app.netlify.app/#website",
+          "url": "https://the-political-compass-app.netlify.app/",
+          "name": "The Political Compass",
+          "description": "Interactive reference for 132 abstract political ideologies, classified across three orthogonal compasses: the classic two-axis (Authoritarian/Libertarian × Left/Right), Platform Logic (Centralized/Distributed × Extractive/Generative), and User Logic (Augmented/Organic × Sovereign/Networked).",
+          "inLanguage": "en-US",
+          "publisher": { "@id": "https://the-political-compass-app.netlify.app/#org" },
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://the-political-compass-app.netlify.app/ask?q={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://the-political-compass-app.netlify.app/#org",
+          "name": "The Political Compass",
+          "url": "https://the-political-compass-app.netlify.app/",
+          "logo": "https://the-political-compass-app.netlify.app/favicon.svg",
+          "founder": {
+            "@type": "Person",
+            "name": "McKale Olson",
+            "url": "https://mckaleolson.com"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://the-political-compass-app.netlify.app/#webpage",
+          "url": "https://the-political-compass-app.netlify.app/",
+          "name": "The Political Compass — Three-Axis Political Classification",
+          "description": "Interactive reference for 132 abstract political ideologies across three compasses.",
+          "isPartOf": { "@id": "https://the-political-compass-app.netlify.app/#website" },
+          "inLanguage": "en-US",
+          "primaryImageOfPage": "https://the-political-compass-app.netlify.app/og-image.svg",
+          "about": [
+            { "@id": "https://the-political-compass-app.netlify.app/#auth-left" },
+            { "@id": "https://the-political-compass-app.netlify.app/#auth-right" },
+            { "@id": "https://the-political-compass-app.netlify.app/#lib-left" },
+            { "@id": "https://the-political-compass-app.netlify.app/#lib-right" }
+          ]
+        },
+        {
+          "@type": "DefinedTermSet",
+          "@id": "https://the-political-compass-app.netlify.app/#auth-left",
+          "name": "Authoritarian Left",
+          "description": "Centralized state authority paired with collective ownership of the means of production. 25 abstract ideologies including Stalinism, Maoism, Marxism-Leninism, Trotskyism, Anti-Revisionism, Eco-Fascism, Posadism, Stratocracy, Conservative Socialism, Distributism, and Christian Democracy."
+        },
+        {
+          "@type": "DefinedTermSet",
+          "@id": "https://the-political-compass-app.netlify.app/#auth-right",
+          "name": "Authoritarian Right",
+          "description": "Centralized state authority paired with private ownership and economic hierarchy. 25 abstract ideologies including Fascism, Nazism, Theocracy, Reactionarism, Absolute Monarchism, Imperialism, Aristocracy, Feudalism, Authoritarian Capitalism, Conservatism, and Neo-Conservatism."
+        },
+        {
+          "@type": "DefinedTermSet",
+          "@id": "https://the-political-compass-app.netlify.app/#lib-left",
+          "name": "Libertarian Left",
+          "description": "Decentralized governance paired with collective or cooperative ownership. 25 abstract ideologies including Anarcho-Communism, Anarcho-Syndicalism, Libertarian Socialism, Democratic Socialism, Social Democracy, Mutualism, Eco-Anarchism, Anarcha-Feminism, Syndicalism, Georgism, and Welfarism."
+        },
+        {
+          "@type": "DefinedTermSet",
+          "@id": "https://the-political-compass-app.netlify.app/#lib-right",
+          "name": "Libertarian Right",
+          "description": "Decentralized governance paired with private property and free markets. 25 abstract ideologies including Anarcho-Capitalism, Minarchism, Voluntaryism, Agorism, Libertarianism, Classical Liberalism, Neoliberalism, Objectivism, Egoism, Crypto-Anarchism, and Capitalism."
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
